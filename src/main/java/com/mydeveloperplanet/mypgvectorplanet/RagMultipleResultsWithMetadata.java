@@ -115,8 +115,7 @@ public class RagMultipleResultsWithMetadata {
 
         StringBuilder inputData = new StringBuilder();
         for (EmbeddingMatch<TextSegment> match : relevant) {
-            EmbeddingMatch<TextSegment> embeddingMatch = match;
-            inputData.append(embeddingMatch.embedded().text()).append("\n");
+            inputData.append(match.embedded().text()).append("\n");
         }
 
         ChatLanguageModel model = OllamaChatModel.builder()
